@@ -1,0 +1,130 @@
+.HomeCategory{
+    padding: 50px 0;
+}
+.popular-styles-section {
+    padding: 20px;
+  }
+  
+  .vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .main-image {
+    object-fit: cover;
+    height: 100%;
+  }
+  
+  @media (max-width: 767px) {
+    .vertical-text {
+      writing-mode: horizontal-tb;
+      transform: none;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+  }
+  
+
+  .product-section {
+    padding: 20px;
+  }
+  
+  .card {
+    border: none;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-img-top {
+    object-fit: cover;
+    height: 300px;
+  }
+  
+  .badge {
+    font-size: 0.8rem;
+    margin-left: 5px;
+  }
+  
+  .nav-link.active {
+    font-weight: bold;
+    border-bottom: 3px solid #000;
+  }
+  
+  @media (max-width: 768px) {
+    .card-img-top {
+      height: 200px;
+    }
+  }
+  
+  .hero-section {
+    background-color: #000;
+    padding: 100px 0;
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  .hero-image-wrapper {
+    position: relative;
+  }
+  
+  .hero-image {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  
+  .hero-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .hero-content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .btn-lg {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-light:hover {
+    background-color: #f5f5f5;
+    color: #333;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 50px 0;
+    }
+  
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+    }
+  
+    .col-md-6 {
+      padding: 0 20px;
+    }
+  
+    .hero-image {
+      display: none; /* Hide image on small screens */
+    }
+  }
+  

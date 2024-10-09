@@ -1,5 +1,6 @@
 import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../../public/css/custom.css'
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
 import AddBootstrap from "./AddBootstrap";

@@ -33,9 +33,9 @@ const Header = () => {
                 <Link href="/" className="menu__link">Home</Link>
               </li>
               <li className="menu__item menu__dropdown">
-                <Link href="javascript:void(0)" className="menu__link">
+                <div className="menu__link">
                   Products <FaArrowRight/>
-                </Link>
+                </div>
                 <div className="submenu megamenu__text">
                   <div className="submenu__inner">
                     <h4 className="submenu__title">Rings</h4>
@@ -76,9 +76,9 @@ const Header = () => {
                 </div>
               </li>
               <li className="menu__item menu__dropdown">
-                <Link href="javascript:void(0)" className="menu__link">
+                <div className="menu__link">
                   More <FaArrowRight/>
-                </Link>
+                </div>
                 <div className="submenu megamenu__image">
                   <div className="submenu__inner">
                     <Link href="#">
@@ -123,9 +123,9 @@ const Header = () => {
                 </div>
               </li>
               <li className="menu__item menu__dropdown">
-                <Link href="javascript:void(0)" className="menu__link">
+                <div className="menu__link">
                   Account <FaArrowRight/>
-                </Link>
+                </div>
                 <div className="submenu megamenu__normal">
                   <ul className="submenu__list">
                     <li><Link href="#">Login</Link></li>
