@@ -1,5 +1,10 @@
-import localFont from "next/font/local";
 import "./globals.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from "@/components/layouts/Header";
+import Footer from "@/components/layouts/Footer";
+import AddBootstrap from "./AddBootstrap";
+import LoadMenuScript from "@/components/LoadMenuScript";
+
 
 // Default metadata for the entire site
 export const metadata = {
@@ -11,8 +16,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body >
+      <body>
+        <Header/>
+        <AddBootstrap/>
+        <LoadMenuScript/>
         {children}
+        <Footer/>
       </body>
     </html>
   );
