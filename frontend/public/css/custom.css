@@ -1,130 +1,245 @@
-.HomeCategory{
-    padding: 50px 0;
+/* ==================== Home Category ==================== */
+.HomeCategory {
+  padding: 50px 0;
 }
-.popular-styles-section {
-    padding: 20px;
-  }
-  
-  .vertical-text {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  .main-image {
-    object-fit: cover;
-    height: 100%;
-  }
-  
-  @media (max-width: 767px) {
-    .vertical-text {
-      writing-mode: horizontal-tb;
-      transform: none;
-      font-size: 1rem;
-      margin-bottom: 20px;
-    }
-  }
-  
 
-  .product-section {
-    padding: 20px;
+.CategoryMainDiv {
+  position: relative;
+}
+
+.CategoryMainDiv a img {
+  width: 100%;
+  height: 100%;
+}
+
+.CategoryMainDiv a .CategoryHoverText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: #273c7596;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+
+.CategoryMainDiv:hover .CategoryHoverText {
+  opacity: 1;
+}
+
+.CategoryMainDiv a .CategoryHoverText h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  color: var(--accent);
+  font-size: 20px;
+}
+
+/* ==================== Popular Styles Section ==================== */
+.popular-styles-section {
+  padding: 20px;
+}
+
+.popularImageDiv{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.popularImageDiv img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.6s ease;
+}
+.popularImageDiv:hover img{
+  transform: scale(1.2);
+}
+
+/* ==================== Vertical Text ==================== */
+.vertical-text {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ==================== Main Image ==================== */
+.main-image {
+  object-fit: cover;
+  height: 100%;
+}
+
+/* ==================== Product Section ==================== */
+.product-section {
+  padding: 40px;
+}
+
+.card {
+  border: none;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 300px;
+}
+
+.badge {
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  border-bottom: 3px solid var(--primary);
+}
+
+/* Button Styles */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.add-to-cart-btn {
+  background-color: var(--primary);
+  color: var(--background);
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #b99d30;
+}
+
+.buy-btn {
+  border: 2px solid var(--primary);
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buy-btn:hover {
+  background-color: var(--primary);
+  color: var(--background);
+}
+
+
+/* ==================== Product Badge ==================== */
+.product-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.badge-sale {
+  background-color: var(--primary); /* Gold color */
+}
+
+.badge-new {
+  background-color: var(--secondary); /* Dark secondary color */
+}
+
+.badge-hot {
+  background-color: #e74c3c; /* Red for hot badge */
+}
+
+
+
+/* ==================== Hero Section ==================== */
+.hero-section {
+  background-color: #000;
+  padding: 100px 0;
+  min-height: 100vh;
+  position: relative;
+}
+
+.hero-image-wrapper {
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn-lg {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-light:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* ==================== Media Queries ==================== */
+@media (max-width: 767px) {
+  .vertical-text {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 1rem;
+    margin-bottom: 20px;
   }
-  
-  .card {
-    border: none;
-    transition: transform 0.3s;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  
+}
+
+@media (max-width: 768px) {
   .card-img-top {
-    object-fit: cover;
-    height: 300px;
+    height: 200px;
   }
-  
-  .badge {
-    font-size: 0.8rem;
-    margin-left: 5px;
-  }
-  
-  .nav-link.active {
-    font-weight: bold;
-    border-bottom: 3px solid #000;
-  }
-  
-  @media (max-width: 768px) {
-    .card-img-top {
-      height: 200px;
-    }
-  }
-  
+
   .hero-section {
-    background-color: #000;
-    padding: 100px 0;
-    min-height: 100vh;
-    position: relative;
+    padding: 50px 0;
   }
-  
-  .hero-image-wrapper {
-    position: relative;
-  }
-  
-  .hero-image {
-    width: 100%;
-    max-width: 100%;
-    object-fit: cover;
-  }
-  
-  .hero-content {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  
+
   .hero-content h1 {
-    font-size: 4rem;
-    font-weight: 700;
+    font-size: 2.5rem;
   }
-  
+
   .hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1rem;
   }
-  
-  .btn-lg {
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease;
+
+  .col-md-6 {
+    padding: 0 20px;
   }
-  
-  .btn-light:hover {
-    background-color: #f5f5f5;
-    color: #333;
+
+  .hero-image {
+    display: none; /* Hide image on small screens */
   }
-  
-  /* Responsive Styling */
-  @media (max-width: 768px) {
-    .hero-section {
-      padding: 50px 0;
-    }
-  
-    .hero-content h1 {
-      font-size: 2.5rem;
-    }
-  
-    .hero-content p {
-      font-size: 1rem;
-    }
-  
-    .col-md-6 {
-      padding: 0 20px;
-    }
-  
-    .hero-image {
-      display: none; /* Hide image on small screens */
-    }
-  }
-  
+}

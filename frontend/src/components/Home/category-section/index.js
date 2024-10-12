@@ -43,15 +43,22 @@ export default function CategorySection() {
                     <div className="row">
                         {categoryImages.map((image, index) => (
                             <div className="col-md-2" key={index}>
-                                <Link href={image.link}>
-                                    <Image 
-                                        src={image.src} 
-                                        width={200} 
-                                        height={200} 
-                                        alt={image.alt} 
-                                        style={{ cursor: 'pointer' }} // Optional: Makes it clear it's clickable
-                                    />
-                                </Link>
+                                <div className="CategoryMainDiv">
+                                    <Link href={image.link}>
+                                        <Image 
+                                            src={image.src} 
+                                            width={200} 
+                                            height={200} 
+                                            alt={image.alt} 
+                                            style={{ cursor: 'pointer' }} // Optional: Makes it clear it's clickable
+                                        />
+                                        <div className="CategoryHoverText">
+                                            <h3>
+                                                {image.alt}
+                                            </h3>
+                                        </div>
+                                    </Link>
+                                </div>
                             </div>
                         ))}
                     </div>
