@@ -37,7 +37,7 @@ export default function ProductSection() {
       </SectionTitle>
 
       {/* Tabbing for product categories */}
-      <ul className="nav nav-tabs justify-content-center mb-4">
+      <ul className="nav nav-tabs justify-content-start mb-4">
         {['All', 'Rings', 'Necklaces', 'Earrings', 'Bracelets'].map((category) => (
           <li className="nav-item" key={category}>
             <button
@@ -70,8 +70,12 @@ export default function ProductSection() {
                   )}
                   {product.hot &&  <ProductBadge type="hot" />}
                   <div className="button-group">
-                    <button className="btn btn-primary add-to-cart-btn">Add to Cart</button>
-                    <button className="btn btn-outline-secondary buy-btn">Buy Now</button>
+                    <button className="btn ButtonOutline">
+                      <span>Add to Cart</span>
+                    </button>
+                    <button className="ButtonBackGround">
+                      <span>Buy Now</span>
+                    </button>
                   </div>
                 </div>
               </div>
