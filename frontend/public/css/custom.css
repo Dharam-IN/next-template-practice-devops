@@ -216,48 +216,41 @@
 
 
 
-/* ==================== Hero Section ==================== */
-.hero-section {
-  background-color: #000;
-  padding: 100px 0;
-  min-height: 100vh;
+/* ==================== New Collection Section ==================== */
+.NewCollectionSection {
+  background-color: #f8f8f8;
+  position: relative;
+  padding-top: 50px;
+}
+.NewCollectionSection .row{
+  /* background-color: #f8f8f8; */
+}
+.NewCollectionSection .NewCollectionSectionImageWrapper {
   position: relative;
 }
-
-.hero-image-wrapper {
-  position: relative;
-}
-
-.hero-image {
+.NewCollectionSection .NewCollectionSectionImageWrapper img {
+  display: flex;
+  align-items: end;
   width: 100%;
-  max-width: 100%;
+  height: 600px;
   object-fit: cover;
 }
 
-.hero-content {
+.NewCollectionSectionContent {
   padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 50px;
+  color: var(--text-color);
 }
 
-.hero-content h1 {
+.NewCollectionSectionContent h1 {
   font-size: 4rem;
   font-weight: 700;
 }
 
-.hero-content p {
+.NewCollectionSectionContent p {
   font-size: 1.2rem;
   margin-bottom: 30px;
-}
-
-.btn-lg {
-  font-size: 1.2rem;
-  padding: 10px 20px;
-  transition: background-color 0.3s ease;
-}
-
-.btn-light:hover {
-  background-color: #f5f5f5;
-  color: #333;
 }
 
 /* ==================== Media Queries ==================== */

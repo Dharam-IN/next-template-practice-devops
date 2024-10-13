@@ -14,7 +14,7 @@ export const SectionTitle = ({ preTitle, title, align = "center", children }) =>
         </h2>
       )}
       {children && (
-        <p className="max-w-2xl py-4 text-lg leading-normal text-gray-500 lg:text-xl xl:text-xl">
+        <p className="max-w-2xl py-2 text-lg leading-normal text-gray-500 lg:text-xl xl:text-xl">
           {children}
         </p>
       )}
