@@ -647,5 +647,8 @@ pointer-events: none;
   transform: rotate(-90deg);
 }
 .SwiperBanners{
-  height: 500px !important;
+  height: 700px !important;
+}
+.SwiperBanners img{
+  object-position: top;
 }

@@ -11,6 +11,7 @@ import 'swiper/css/navigation';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Image from 'next/image';
+import Constant from '@/Constants/Constants';
 
 export default function HeroSection() {
   const progressCircle = useRef(null);
@@ -37,13 +38,13 @@ export default function HeroSection() {
         className="mySwiper"
       >
         <SwiperSlide className='SwiperBanners'>
-            <Image src="https://img.freepik.com/free-vector/ornamental-floral-corner-frame-luxury-background-design_1017-26077.jpg?t=st=1728320409~exp=1728324009~hmac=a18a777f7ac4bf9dad21852cc1ede876c69a56526eaa64f995b198835c78f624&w=1380" width={500} height={500} alt='SLider'/>
+            <Image src={`${Constant.IMAGES_URL}/slider_1.webp`} width={2000} height={2000} alt='SLider'/>
         </SwiperSlide>
         <SwiperSlide className='SwiperBanners'>
-            <Image src="https://img.freepik.com/free-vector/ornamental-floral-corner-frame-luxury-background-design_1017-26077.jpg?t=st=1728320409~exp=1728324009~hmac=a18a777f7ac4bf9dad21852cc1ede876c69a56526eaa64f995b198835c78f624&w=1380" width={500} height={500} alt='SLider'/>
+            <Image src={`${Constant.IMAGES_URL}/slider_2.webp`} width={2000} height={2000} alt='SLider'/>
         </SwiperSlide>
         <SwiperSlide className='SwiperBanners'>
-            <Image src="https://img.freepik.com/free-vector/ornamental-floral-corner-frame-luxury-background-design_1017-26077.jpg?t=st=1728320409~exp=1728324009~hmac=a18a777f7ac4bf9dad21852cc1ede876c69a56526eaa64f995b198835c78f624&w=1380" width={500} height={500} alt='SLider'/>
+            <Image src={`${Constant.IMAGES_URL}/slider_1.webp`} width={2000} height={2000} alt='SLider'/>
         </SwiperSlide>
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>
