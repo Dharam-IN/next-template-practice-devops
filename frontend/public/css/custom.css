@@ -59,13 +59,13 @@
 }
 
 /* ==================== Vertical Text ==================== */
-.vertical-text {
+/* .vertical-text {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
-}
+} */
 
 /* ==================== Main Image ==================== */
 .main-image {
@@ -253,14 +253,33 @@
   margin-bottom: 30px;
 }
 
+
+/* ==================== Most Loved Section ==================== */
+.SliderCol{
+  height: 300px !important;
+}
+.ExquisiteSliderSection .swiper-button-next, .ExquisiteSliderSection .swiper-button-prev {
+  background: var(--secondary);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.ExquisiteSliderSection .swiper-button-next::after, .ExquisiteSliderSection .swiper-button-prev::after{
+  font-size: 25px;
+  color: var(--accent);
+}
+
 /* ==================== Media Queries ==================== */
 @media (max-width: 767px) {
-  .vertical-text {
+  /* .vertical-text {
     writing-mode: horizontal-tb;
     transform: none;
     font-size: 1rem;
     margin-bottom: 20px;
-  }
+  } */
 }
 
 @media (max-width: 768px) {

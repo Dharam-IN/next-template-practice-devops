@@ -1,3 +1,4 @@
+import { SectionTitle } from '@/components/SectionTitle/SectionTitle';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -40,6 +41,11 @@ export default function CategorySection() {
         <>
             <section className="HomeCategory">
                 <div className="container">
+                    <div className="row">
+                        <SectionTitle title={"Shop By Category"}>
+                            Browse through your favorite categories. We've got them all!
+                        </SectionTitle>
+                    </div>
                     <div className="row">
                         {categoryImages.map((image, index) => (
                             <div className="col-md-2" key={index}>

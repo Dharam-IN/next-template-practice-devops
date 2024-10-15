@@ -1,239 +1,153 @@
-import Constant from "../../config/constant";
-import Image from "next/image";
-import Link from "next/link";
-import React, { useState, useEffect } from "react";
-import { useSession } from "next-auth/react"
-import { toast } from "react-toastify";
-import { useRouter } from 'next/navigation'
-import { LogOut } from '../logout/logout'
-import { useAuth } from "@/components/context/context";
-import Apilist from "@/pages/api";
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
-import { useCart } from '../../contexts/CartContext';
+import React from 'react';
+import { FaArrowLeft, FaSun } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Link from 'next/link';
 
-const Header = ({ pageData }) => {
-    const [logoutData, setLogoutData] = useState(false)
-    const [name, setName] = useState("")
-    const router = useRouter()
-    const { query } = router;
-    const { push } = useRouter()
-    const { data: session, status } = useSession()
-    const [categoryData, setCategoryData] = useState([])
-
-    const { cartCount, wishlistCount } = useCart();
-    useEffect(() => {
-        const getProductCategory = async () => {
-            const data = {}
-            let pageData = await new Apilist().getProductCategory(data);
-            setCategoryData(pageData?.result)
-        }
-
-        getProductCategory()
-    }, [])
-
-
-    useEffect(() => {
-        setLogoutData(session)
-        const firstLetter = session?.user?.result?.full_name?.charAt(0);
-        const capitalizedLetter = firstLetter ? firstLetter.toUpperCase() : '';
-        setName(capitalizedLetter)
-    }, [logoutData, session])
-
-    const handleLogout = () => {
-        LogOut(push)
-        toast.success('You have been logged out successfully.');
-    };
-
-
-
-
-    return (
-        <>
-            <header>
-                <div className="header-top">
-                    <div className="container d-flex justify-content-between align-items-center">
-                        <div className="top-header-item d-flex align-items-center">
-                            <span className="icon me-2">
-                                <Image
-                                    src={`${Constant.BASE_IMAGE_URL}/fast-delivery.svg`}
-                                    alt="Fast delivery"
-                                    width="37"
-                                    height="22"
-                                />
-                            </span>
-                            <span className="text text-white">Fast delivery</span>
-                        </div>
-                        <div className="top-header-item d-flex align-items-center">
-                            <span className="icon me-2">
-                                <Image
-                                    src={`${Constant.BASE_IMAGE_URL}/offer.svg`}
-                                    alt="WELCOME OFFER 20% OFF"
-                                    width="25"
-                                    height="25"
-                                />
-                            </span>
-                            <span className="text text-white">WELCOME OFFER 20% OFF</span>
-                        </div>
-                        <div className="top-header-item d-flex align-items-center">
-                            <span className="icon me-2">
-                                <Image
-                                    src={`${Constant.BASE_IMAGE_URL}/creadit-card.svg`}
-                                    alt="Safe payments"
-                                    width="27"
-                                    height="22"
-                                />
-                            </span>
-                            <span className="text text-white">Safe payments</span>
-                        </div>
-                    </div>
+const Header = () => {
+  return (
+    <header className="header" id="header">
+      <nav className="navbar container">
+        <section className="navbar__left">
+          <Link href="/" className="brand">
+            Jewellery
+          </Link>
+          <div className="burger" id="burger">
+            <span className="burger-line"></span>
+            <span className="burger-line"></span>
+            <span className="burger-line"></span>
+          </div>
+        </section>
+        
+        <section className="navbar__center">
+          <span className="overlay"></span>
+          <div className="menu" id="menu">
+            <div className="menu__header">
+              <span className="menu__arrow">
+                <FaArrowLeft/>
+              </span>
+              <span className="menu__title"></span>
+            </div>
+            <ul className="menu__inner">
+              <li className="menu__item">
+                <Link href="/" className="menu__link">Home</Link>
+              </li>
+              <li className="menu__item menu__dropdown">
+                <div className="menu__link">
+                  Products <FaArrowRight/>
                 </div>
-                <div className="header-bottom">
-                    <div className="container">
-                        <div className="header-bottom-inner d-flex align-items-center justify-content-between">
-                            <nav className="navbar navbar-expand-lg">
-                                <div className="container p-0">
-                                    <Link className="navbar-brand" href={`${Constant?.WEBSITE_URL}`}>
-                                        <Image
-                                            src={`${Constant.BASE_IMAGE_URL}/logo.svg`}
-                                            alt="Logo"
-                                            width="186"
-                                            height="58"
-                                        />
-                                    </Link>
-                                    <button
-                                        className="navbar-toggler menu-btn"
-                                        type="button"
-                                        data-bs-toggle="collapse"
-                                        data-bs-target="#navbarNavDropdown"
-                                        aria-controls="navbarNavDropdown"
-                                        aria-expanded="false"
-                                        aria-label="Toggle navigation"
-                                    >
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </button>
-                                    <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                                        <ul className="navbar-nav">
-                                            {categoryData?.map((post, index)=>(
-                                                <li className="nav-item" key={index}>
-                                                <Link className="nav-link" href={`/product-listing/${post?.slug}?sort=0`}>
-                                                    {post?.name}
-                                                </Link>
-                                            </li>
-                                            ))}
-                                                                          
-                                            <li className="nav-item">
-                                                <Link className="nav-link" href="/sale">
-                                                    SALE
-                                                </Link>
-                                            </li>
-                                            <li className="nav-item">
-                                                <Link className="nav-link" href="/blogs">
-                                                    Blog
-                                                </Link>
-                                            </li>
-                                            <li className="nav-item">
-                                                <Link className="nav-link" href="/about-us">
-                                                    About us
-                                                </Link>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </nav>
-                            <div className="header-right">
-                                <ul className="d-flex align-items-center">
-                                    <li>
-                                        <Link href="/">
-                                            <Image
-                                                src={`${Constant.BASE_IMAGE_URL}/search.svg`}
-                                                alt="Search"
-                                                width="18"
-                                                height="18"
-                                            />
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/wishlist">
-                                            <Image
-                                                src={`${Constant.BASE_IMAGE_URL}/whishlist.svg`}
-                                                alt="Whishlist"
-                                                width="22"
-                                                height="19"
-                                            />
-                                            <span>
-                                            {wishlistCount}
-                                            </span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        {logoutData && logoutData !== null ? <div className="dropdown d-flex align-items-center">
-                                            <div id="dropdownMenuButton1" className="after-login-btn" data-bs-toggle="dropdown" aria-expanded="false" style={{ cursor: "pointer" }}>
-                                                {name}
-                                            </div>
-                                            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                <li><Link className="dropdown-item" href="/my-profile">My Profile</Link></li>
-                                                <li><Link className="dropdown-item" href="#" onClick={handleLogout}>Logout</Link></li>
-                                            </ul>
-                                        </div> : <Link href="/login">
-                                            <Image
-                                                src={`${Constant.BASE_IMAGE_URL}/user.svg`}
-                                                alt="Account"
-                                                width="18"
-                                                height="21"
-                                            />
-
-                                        </Link>}
-
-                                    </li>
-                                    <li>
-                                        <Link href="/cart">
-                                            <Image
-                                                src={`${Constant.BASE_IMAGE_URL}/cart.svg`}
-                                                alt="Cart"
-                                                width="24"
-                                                height="21"
-                                            />
-                                            {/* {session?.user?.result?.slug && cart !== 0 ? <span className="badges">{cart}</span> : ""} */}
-                                            <span>
-                                            {cartCount}
-
-                                            </span>
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <div className="submenu megamenu__text">
+                  <div className="submenu__inner">
+                    <h4 className="submenu__title">Rings</h4>
+                    <ul className="submenu__list">
+                      <li><Link href="#">Blue Sapphire Rings</Link></li>
+                      <li><Link href="#">Blue Sapphire Rings</Link></li>
+                      <li><Link href="#">Blue Sapphire Rings</Link></li>
+                      <li><Link href="#">Blue Sapphire Rings</Link></li>
+                    </ul>
+                  </div>
+                  <div className="submenu__inner">
+                    <h4 className="submenu__title">Necklaces</h4>
+                    <ul className="submenu__list">
+                      <li><Link href="#">Blue Sapphire Necklaces</Link></li>
+                      <li><Link href="#">Blue Sapphire Necklaces</Link></li>
+                      <li><Link href="#">Blue Sapphire Necklaces</Link></li>
+                      <li><Link href="#">Blue Sapphire Necklaces</Link></li>
+                    </ul>
+                  </div>
+                  <div className="submenu__inner">
+                    <h4 className="submenu__title">Earrings</h4>
+                    <ul className="submenu__list">
+                    <li><Link href="#">Blue Sapphire Necklaces</Link></li>
+                    <li><Link href="#">Blue Sapphire Necklaces</Link></li>
+                    <li><Link href="#">Blue Sapphire Necklaces</Link></li>
+                    <li><Link href="#">Blue Sapphire Necklaces</Link></li>
+                    </ul>
+                  </div>
+                  <div className="submenu__inner">
+                    <h4 className="submenu__title">Earrings</h4>
+                    <ul className="submenu__list">
+                    <li><Link href="#">Blue Sapphire Necklaces</Link></li>
+                    <li><Link href="#">Blue Sapphire Necklaces</Link></li>
+                    <li><Link href="#">Blue Sapphire Necklaces</Link></li>
+                    <li><Link href="#">Blue Sapphire Necklaces</Link></li>
+                    </ul>
+                  </div>
                 </div>
-            </header>
-        </>
-    );
-};
+              </li>
+              <li className="menu__item menu__dropdown">
+                <div className="menu__link">
+                  More <FaArrowRight/>
+                </div>
+                <div className="submenu megamenu__image">
+                  <div className="submenu__inner">
+                    <Link href="#">
+                      <img
+                        src="https://plus.unsplash.com/premium_photo-1677013011737-ba61149ba70c?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        className="submenu-image"
+                        alt=""
+                      />
+                      <span className="submenu__title">Home</span>
+                    </Link>
+                  </div>
+                  <div className="submenu__inner">
+                    <Link href="#">
+                      <img
+                        src="https://images.unsplash.com/photo-1515688594390-b649af70d282?q=80&w=1612&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        className="submenu-image"
+                        alt=""
+                      />
+                      <span className="submenu__title">Beauty</span>
+                    </Link>
+                  </div>
+                  <div className="submenu__inner">
+                    <Link href="#">
+                      <img
+                        src="https://plus.unsplash.com/premium_photo-1676550886096-bfc64aae1e2a?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        className="submenu-image"
+                        alt=""
+                      />
+                      <span className="submenu__title">Holiday</span>
+                    </Link>
+                  </div>
+                  <div className="submenu__inner">
+                    <Link href="#">
+                      <img
+                        src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        className="submenu-image"
+                        alt=""
+                      />
+                      <span className="submenu__title">Sale</span>
+                    </Link>
+                  </div>
+                </div>
+              </li>
+              <li className="menu__item menu__dropdown">
+                <div className="menu__link">
+                  Account <FaArrowRight/>
+                </div>
+                <div className="submenu megamenu__normal">
+                  <ul className="submenu__list">
+                    <li><Link href="#">Login</Link></li>
+                    <li><Link href="#">Register</Link></li>
+                    <li><Link href="#">Track Order</Link></li>
+                    <li><Link href="#">Help</Link></li>
+                  </ul>
+                </div>
+              </li>
+              <li className="menu__item">
+                <Link href="/support" className="menu__link">Support</Link>
+              </li>
+            </ul>
+          </div>
+        </section>
+        
+        <section className="navbar__right">
+          login
+        </section>
+      </nav>
+    </header>
+  );
+}
 
 export default Header;
-
-export async function getServerSideProps(context) {
-    const { query } = context;
-    const data = {}
-    let pageData = await new Apilist().getProductCategory(data);
-
-    if (!query.creds) {
-        return {
-            redirect: {
-                destination: "/",
-                permanent: false,
-                pageData: pageData,
-            },
-        };
-    }
-
-    return {
-        props: {
-            creds: query.creds || null,
-            pageData: pageData,
-        },
-    };
-}

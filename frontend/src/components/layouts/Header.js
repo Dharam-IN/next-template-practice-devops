@@ -1,30 +1,105 @@
-import React from 'react';
-import { FaArrowLeft, FaSun } from "react-icons/fa6";
-import { FaArrowRight } from "react-icons/fa";
-import 'bootstrap/dist/css/bootstrap.min.css';
+"use client";
+import React, { useState, useEffect } from 'react';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import Link from 'next/link';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Header = () => {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    // Fetch categories from the backend
+    const fetchCategories = async () => {
+      // Simulating backend data
+      const data = [
+        {
+          title: 'Earrings',
+          subcategories: [
+            {
+              section: 'Natural Gemstone Earrings',
+              products: [
+                { name: 'Blue Sapphire Earrings' },
+                { name: 'Ruby Earrings' },
+                { name: 'Emerald Earrings' },
+                { name: 'Opal Earrings' },
+              ]
+            },
+            {
+              section: 'Natural Diamond Earrings',
+              products: [
+                { name: 'Diamond Earrings' },
+                { name: 'Colored Diamond Earrings' },
+              ]
+            },
+            {
+              section: 'Lab-Grown Earrings',
+              products: [
+                { name: 'Lab Diamond Earrings' },
+                { name: 'Lab Ruby Earrings' },
+              ]
+            },
+            {
+              section: 'Earrings by Style',
+              products: [
+                { name: 'Classic Earrings' },
+                { name: 'Stud Earrings' },
+                { name: 'Drop Earrings' }
+              ]
+            },
+            {
+              section: 'Featured',
+              products: [
+                { name: 'Best Selling Earrings' },
+                { name: 'Anniversary Gifts' }
+              ]
+            }
+          ]
+        },
+        {
+          title: 'Rings',
+          subcategories: [
+            {
+              section: 'Gemstone Rings',
+              products: [
+                { name: 'Blue Sapphire Rings' },
+                { name: 'Ruby Rings' },
+              ]
+            },
+            {
+              section: 'Diamond Rings',
+              products: [
+                { name: 'Solitaire Rings' },
+                { name: 'Halo Rings' },
+              ]
+            }
+          ]
+        }
+      ];
+
+      setCategories(data);
+    };
+
+    fetchCategories();
+  }, []);
+
   return (
     <header className="header" id="header">
       <nav className="navbar container">
         <section className="navbar__left">
-          <Link href="/" className="brand">
-            Jewellery
-          </Link>
+          <Link href="/" className="brand">Jewellery</Link>
           <div className="burger" id="burger">
             <span className="burger-line"></span>
             <span className="burger-line"></span>
             <span className="burger-line"></span>
           </div>
         </section>
-        
+
         <section className="navbar__center">
           <span className="overlay"></span>
           <div className="menu" id="menu">
             <div className="menu__header">
               <span className="menu__arrow">
-                <FaArrowLeft/>
+                <FaArrowLeft />
               </span>
               <span className="menu__title"></span>
             </div>
@@ -32,50 +107,31 @@ const Header = () => {
               <li className="menu__item">
                 <Link href="/" className="menu__link">Home</Link>
               </li>
-              <li className="menu__item menu__dropdown">
-                <div className="menu__link">
-                  Products <FaArrowRight/>
-                </div>
-                <div className="submenu megamenu__text">
-                  <div className="submenu__inner">
-                    <h4 className="submenu__title">Rings</h4>
-                    <ul className="submenu__list">
-                      <li><Link href="#">Blue Sapphire Rings</Link></li>
-                      <li><Link href="#">Blue Sapphire Rings</Link></li>
-                      <li><Link href="#">Blue Sapphire Rings</Link></li>
-                      <li><Link href="#">Blue Sapphire Rings</Link></li>
-                    </ul>
+
+              {/* Dynamic categories */}
+              {categories.map((category, index) => (
+                <li className="menu__item menu__dropdown" key={index}>
+                  <div className="menu__link">
+                    {category.title} <FaArrowRight />
                   </div>
-                  <div className="submenu__inner">
-                    <h4 className="submenu__title">Necklaces</h4>
-                    <ul className="submenu__list">
-                      <li><Link href="#">Blue Sapphire Necklaces</Link></li>
-                      <li><Link href="#">Blue Sapphire Necklaces</Link></li>
-                      <li><Link href="#">Blue Sapphire Necklaces</Link></li>
-                      <li><Link href="#">Blue Sapphire Necklaces</Link></li>
-                    </ul>
+                  <div className="submenu megamenu__text">
+                    {category.subcategories.map((subcategory, subIndex) => (
+                      <div className="submenu__inner" key={subIndex}>
+                        <h4 className="submenu__title">{subcategory.section}</h4>
+                        <ul className="submenu__list">
+                          {subcategory.products.map((product, prodIndex) => (
+                            <li key={prodIndex}>
+                              <Link href="#">{product.name}</Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
                   </div>
-                  <div className="submenu__inner">
-                    <h4 className="submenu__title">Earrings</h4>
-                    <ul className="submenu__list">
-                    <li><Link href="#">Blue Sapphire Necklaces</Link></li>
-                    <li><Link href="#">Blue Sapphire Necklaces</Link></li>
-                    <li><Link href="#">Blue Sapphire Necklaces</Link></li>
-                    <li><Link href="#">Blue Sapphire Necklaces</Link></li>
-                    </ul>
-                  </div>
-                  <div className="submenu__inner">
-                    <h4 className="submenu__title">Earrings</h4>
-                    <ul className="submenu__list">
-                    <li><Link href="#">Blue Sapphire Necklaces</Link></li>
-                    <li><Link href="#">Blue Sapphire Necklaces</Link></li>
-                    <li><Link href="#">Blue Sapphire Necklaces</Link></li>
-                    <li><Link href="#">Blue Sapphire Necklaces</Link></li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-              <li className="menu__item menu__dropdown">
+                </li>
+              ))}
+
+<li className="menu__item menu__dropdown">
                 <div className="menu__link">
                   More <FaArrowRight/>
                 </div>
@@ -122,28 +178,15 @@ const Header = () => {
                   </div>
                 </div>
               </li>
-              <li className="menu__item menu__dropdown">
-                <div className="menu__link">
-                  Account <FaArrowRight/>
-                </div>
-                <div className="submenu megamenu__normal">
-                  <ul className="submenu__list">
-                    <li><Link href="#">Login</Link></li>
-                    <li><Link href="#">Register</Link></li>
-                    <li><Link href="#">Track Order</Link></li>
-                    <li><Link href="#">Help</Link></li>
-                  </ul>
-                </div>
-              </li>
               <li className="menu__item">
                 <Link href="/support" className="menu__link">Support</Link>
               </li>
             </ul>
           </div>
         </section>
-        
+
         <section className="navbar__right">
-          login
+          <Link href="/login" className="menu__link">Login</Link>
         </section>
       </nav>
     </header>

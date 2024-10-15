@@ -1,3 +1,4 @@
+import { SectionTitle } from '@/components/SectionTitle/SectionTitle';
 import Link from 'next/link';
 import React from 'react';
 
@@ -27,14 +28,16 @@ const popularStylesData = [
 
 export default function HomePopularStyle() {
   return (
-    <div className="container popular-styles-section">
-      <div className="row">
-        <div className="col-md-1 col-12 d-flex align-items-center justify-content-center">
-          <div className="vertical-text">
-            EXPLORE NEW AND POPULAR STYLES
+    <div className="container-fluid popular-styles-section">
+        <div className="row">
+          <div className="col-12 d-flex align-items-center justify-content-center">
+            <SectionTitle title={"Discover Our Newest and Most Coveted Designs"}>
+            Sparkle and Shine: Discover Jewelry for Little Stars
+            </SectionTitle>
           </div>
         </div>
-        <div className="col-md-11 col-12">
+      <div className="row">
+        <div className="col-12">
           <div className="row">
             {/* Main Image (First element of the array) */}
             <div className="col-md-6 col-12">
