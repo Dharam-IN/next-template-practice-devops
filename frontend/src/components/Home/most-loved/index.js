@@ -16,11 +16,11 @@ export default function MostLoved() {
 
   useEffect(() => {
     const apiData = [
-      { id: 1, name: 'Diamond Ring', category: 'Rings', price: 250.00, image: 'https://via.placeholder.com/300?text=Diamond+Ring' },
-      { id: 2, name: 'Gold Necklace', category: 'Necklaces', hot: true, price: 150.00, image: 'https://via.placeholder.com/300?text=Gold+Necklace' },
-      { id: 3, name: 'Pearl Earrings', category: 'Earrings', hot: true, price: 75.00, image: 'https://via.placeholder.com/300?text=Pearl+Earrings' },
-      { id: 4, name: 'Silver Bracelet', category: 'Bracelets', price: 100.00, sale: true, originalPrice: 150.00, image: 'https://via.placeholder.com/300?text=Silver+Bracelet' },
-      { id: 5, name: 'Sapphire Pendant', category: 'Pendants', price: 200.00, hot: true, image: 'https://via.placeholder.com/300?text=Sapphire+Pendant' },
+      { id: 1, title: 'Diamond Ring', category: 'Rings', price: 250.00, product_image: 'https://via.placeholder.com/300?text=Diamond+Ring' },
+      { id: 2, title: 'Gold Necklace', category: 'Necklaces', hot: true, price: 150.00, product_image: 'https://via.placeholder.com/300?text=Gold+Necklace' },
+      { id: 3, title: 'Pearl Earrings', category: 'Earrings', hot: true, price: 75.00, product_image: 'https://via.placeholder.com/300?text=Pearl+Earrings' },
+      { id: 4, title: 'Silver Bracelet', category: 'Bracelets', price: 100.00, sale: true, originalPrice: 150.00, product_image: 'https://via.placeholder.com/300?text=Silver+Bracelet' },
+      { id: 5, title: 'Sapphire Pendant', category: 'Pendants', price: 200.00, hot: true, product_image: 'https://via.placeholder.com/300?text=Sapphire+Pendant' },
     ];
     setProducts(apiData);
   }, []);

@@ -3,12 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaHeart } from "react-icons/fa6";
 import { CiHeart } from "react-icons/ci";
+import ProductBadge from "../ProductBadge/ProductBadge";
 
 const ProductCol = ({ product }) => {
     return (
         <>
             <div className="product-card">
-                <div className="badge">Hot</div>
+                {product.hot &&  <ProductBadge type="hot" />}
                 <Link href={`/product/${product.id}`} className="product-tumb">
                     <Image
                         src={product.product_image}
@@ -32,8 +33,8 @@ const ProductCol = ({ product }) => {
                     <p>{product.description}</p>
                     <div className="product-bottom-details">
                         <div className="product-price">
-                            <small>${product.old_price.toFixed(2)}</small>
-                            ${product.new_price.toFixed(2)}
+                            <small>${product.price.toFixed(2)}</small>
+                            ${product.price.toFixed(2)}
                         </div>
                     </div>
                 </div>

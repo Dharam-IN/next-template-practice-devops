@@ -1,5 +1,6 @@
 "use client"
 import ProductBadge from '@/components/ProductBadge/ProductBadge';
+import ProductCol from '@/components/productcol';
 import { SectionTitle } from '@/components/SectionTitle/SectionTitle';
 import React, { useEffect, useState } from 'react';
 
@@ -10,11 +11,11 @@ export default function ProductSection() {
 
   useEffect(() => {
     const apiData = [
-      { id: 1, name: 'Diamond Ring', category: 'Rings', price: 250.00, image: 'https://via.placeholder.com/300?text=Diamond+Ring' },
-      { id: 2, name: 'Gold Necklace', category: 'Necklaces', hot: true, price: 150.00, image: 'https://via.placeholder.com/300?text=Gold+Necklace' },
-      { id: 3, name: 'Pearl Earrings', category: 'Earrings', hot: true, price: 75.00, image: 'https://via.placeholder.com/300?text=Pearl+Earrings' },
-      { id: 4, name: 'Silver Bracelet', category: 'Bracelets', price: 100.00, sale: true, originalPrice: 150.00, image: 'https://via.placeholder.com/300?text=Silver+Bracelet' },
-      { id: 5, name: 'Sapphire Pendant', category: 'Pendants', price: 200.00, hot: true, image: 'https://via.placeholder.com/300?text=Sapphire+Pendant' },
+      { id: 1, title: 'Diamond Ring', category: 'Rings', price: 250.00, product_image: 'https://via.placeholder.com/300?text=Diamond+Ring' },
+      { id: 2, title: 'Gold Necklace', category: 'Necklaces', hot: true, price: 150.00, product_image: 'https://via.placeholder.com/300?text=Gold+Necklace' },
+      { id: 3, title: 'Pearl Earrings', category: 'Earrings', hot: true, price: 75.00, product_image: 'https://via.placeholder.com/300?text=Pearl+Earrings' },
+      { id: 4, title: 'Silver Bracelet', category: 'Bracelets', price: 100.00, sale: true, originalPrice: 150.00, product_image: 'https://via.placeholder.com/300?text=Silver+Bracelet' },
+      { id: 5, title: 'Sapphire Pendant', category: 'Pendants', price: 200.00, hot: true, product_image: 'https://via.placeholder.com/300?text=Sapphire+Pendant' },
     ];
     setProducts(apiData);
     setFilteredProducts(apiData);
@@ -55,22 +56,7 @@ export default function ProductSection() {
         {filteredProducts.length > 0 ? (
           filteredProducts.map((product) => (
             <div className="col-lg-3 col-md-4 col-sm-6 mb-4" key={product.id}>
-              <div className="card">
-                <img src={product.image} className="card-img-top" alt={product.name} />
-                <div className="card-body">
-                  <h5 className="card-title">{product.name}</h5>
-                  <p className="card-text">{product.category}</p>
-                  {product.sale ? (
-                    <p>
-                      <span className="text-muted text-decoration-line-through">${product.originalPrice}</span>{' '}
-                      <span className="text-danger">${product.price}</span>
-                    </p>
-                  ) : (
-                    <p>${product.price.toFixed(2)}</p>
-                  )}
-                  {product.hot &&  <ProductBadge type="hot" />}
-                </div>
-              </div>
+              <ProductCol product={product} />
             </div>
           ))
         ) : (

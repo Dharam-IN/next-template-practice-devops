@@ -9,7 +9,7 @@ export const SectionTitle = ({ preTitle, title, align = "center", children }) =>
         </div>
       )}
       {title && (
-        <h2 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight text-dark lg:leading-tight lg:text-4xl">
+        <h2 className="max-w-2xl mt-3 text-3xl text-capitalize font-bold leading-snug tracking-tight text-dark lg:leading-tight lg:text-4xl">
           {title}
         </h2>
       )}
