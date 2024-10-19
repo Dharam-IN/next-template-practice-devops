@@ -5,10 +5,12 @@
 :root {
   --background: #ffffff; /* Use light or dark background based on palette */
   --font-primary: "Poppins", sans-serif;
-  --primary: #D4AF37; /* Gold for luxury feel */
+  --primary: #fbb72c; /* Gold for luxury feel */
   --secondary: #273C75; /* Choose based on palette */
   --accent: #F5F5F5; /* Optional accent color */
   --text-color: #2C2C2C; /* For readable text */
+  --light-text: #999999; /* For readable text */
+  --white-text: #ffffff; /* For readable text */
 }
 
 html,

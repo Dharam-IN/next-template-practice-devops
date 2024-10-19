@@ -1,4 +1,3 @@
-import BestSeller from "@/components/Home/best-seller";
 import CategorySection from "@/components/Home/category-section";
 import HeroSection from "@/components/Home/HeroSection/HeroSection";
 import MostLoved from "@/components/Home/most-loved";
@@ -21,7 +20,6 @@ export default function Home() {
       <MostLoved/>
       <ProductSection/>
       <NewCollection/>
-      <BestSeller/>
     </>
   );
 }

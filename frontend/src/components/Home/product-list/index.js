@@ -69,14 +69,6 @@ export default function ProductSection() {
                     <p>${product.price.toFixed(2)}</p>
                   )}
                   {product.hot &&  <ProductBadge type="hot" />}
-                  {/* <div className="button-group">
-                    <button className="btn ButtonOutline">
-                      <span>Add to Cart</span>
-                    </button>
-                    <button className="ButtonBackGround">
-                      <span>Buy Now</span>
-                    </button>
-                  </div> */}
                 </div>
               </div>
             </div>
