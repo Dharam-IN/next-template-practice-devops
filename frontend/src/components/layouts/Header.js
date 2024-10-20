@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import Link from 'next/link';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Constant from '@/Constants/Constants';
+import Image from 'next/image';
 
 const Header = () => {
   const [categories, setCategories] = useState([]);
@@ -18,39 +20,39 @@ const Header = () => {
             {
               section: 'Natural Gemstone Earrings',
               products: [
-                { name: 'Blue Sapphire Earrings' },
-                { name: 'Ruby Earrings' },
-                { name: 'Emerald Earrings' },
-                { name: 'Opal Earrings' },
+                { name: 'Blue Sapphire Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
+                { name: 'Ruby Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
+                { name: 'Emerald Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
+                { name: 'Opal Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
               ]
             },
             {
               section: 'Natural Diamond Earrings',
               products: [
-                { name: 'Diamond Earrings' },
-                { name: 'Colored Diamond Earrings' },
+                { name: 'Diamond Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
+                { name: 'Colored Diamond Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
               ]
             },
             {
               section: 'Lab-Grown Earrings',
               products: [
-                { name: 'Lab Diamond Earrings' },
-                { name: 'Lab Ruby Earrings' },
+                { name: 'Lab Diamond Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
+                { name: 'Lab Ruby Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
               ]
             },
             {
               section: 'Earrings by Style',
               products: [
-                { name: 'Classic Earrings' },
-                { name: 'Stud Earrings' },
-                { name: 'Drop Earrings' }
+                { name: 'Classic Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
+                { name: 'Stud Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
+                { name: 'Drop Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` }
               ]
             },
             {
               section: 'Featured',
               products: [
-                { name: 'Best Selling Earrings' },
-                { name: 'Anniversary Gifts' }
+                { name: 'Best Selling Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
+                { name: 'Anniversary Gifts', img: `${Constant.IMAGES_URL}/header_gem.webp` }
               ]
             }
           ]
@@ -61,15 +63,15 @@ const Header = () => {
             {
               section: 'Gemstone Rings',
               products: [
-                { name: 'Blue Sapphire Rings' },
-                { name: 'Ruby Rings' },
+                { name: 'Blue Sapphire Rings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
+                { name: 'Ruby Rings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
               ]
             },
             {
               section: 'Diamond Rings',
               products: [
-                { name: 'Solitaire Rings' },
-                { name: 'Halo Rings' },
+                { name: 'Solitaire Rings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
+                { name: 'Halo Rings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
               ]
             }
           ]
@@ -121,7 +123,12 @@ const Header = () => {
                         <ul className="submenu__list">
                           {subcategory.products.map((product, prodIndex) => (
                             <li key={prodIndex}>
-                              <Link href="#">{product.name}</Link>
+                              <Link href="#">
+                              <span>
+                                <Image src={product.img} width={20} height={20} alt={product.name}/>
+                              </span>
+                              <span>{product.name}</span>
+                              </Link>
                             </li>
                           ))}
                         </ul>
@@ -131,9 +138,9 @@ const Header = () => {
                 </li>
               ))}
 
-<li className="menu__item menu__dropdown">
+              <li className="menu__item menu__dropdown">
                 <div className="menu__link">
-                  More <FaArrowRight/>
+                  More <FaArrowRight />
                 </div>
                 <div className="submenu megamenu__image">
                   <div className="submenu__inner">

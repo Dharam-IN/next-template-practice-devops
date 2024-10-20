@@ -406,11 +406,31 @@
 
 /* ==================== Top Offer ==================== */
 .OfferSection .TopOfferCol {
-  background-image: url(/_next/static/media/offer-bg.9b5e8c3a.webp);
+  background-image: url(../images/offer-bg.webp);
   display: block;
   height: 600px;
   background-size: cover;
   background-position: top;
+  text-decoration: none;
+  transition: all 0.6s ease;
+  overflow: hidden;
+}
+.OfferSection .col-lg-6.col-12{
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+.OfferSection .TopOfferCol:hover{
+  transform: scale(1.2);
+}
+.OfferSection .TopOfferCol .TopoffercolCon span svg{
+  transition: all 0.6s ease;
+}
+.OfferSection .TopOfferCol:hover .TopoffercolCon span svg {
+  transform: translateX(10px);
+}
+.OfferSection .col-lg-6.col-12:last-child .TopOfferCol{
+  background-image: url(../images/offer-bg2.webp)
 }
 .OfferSection .TopOfferCol .TopoffercolCon{
   display: flex;
@@ -418,6 +438,7 @@
   align-items: center;
   height: 100%;
   flex-direction: column;
+  color: #fff;
 }
 
 

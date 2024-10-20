@@ -37,6 +37,10 @@ h1, h2, h3 {
   font-family: var(--font-primary);
   font-weight: 700;
 }
+ul,ol{
+  padding: 0 !important;
+  margin: 0 !important;
+}
 
 /* Subheadings */
 h4, h5 {
@@ -54,6 +58,7 @@ p {
 a, .btn {
   font-family: var(--font-primary);
   font-weight: 500;
+  text-decoration: none !important;
 }
 
 /* Small Text */
@@ -142,13 +147,6 @@ pointer-events: none;
   padding: 6rem 0 2rem;
 }
 
-.container {
-  max-width: 75rem;
-  height: auto;
-  margin-inline: auto;
-  padding-inline: 1.5rem;
-}
-
 .centered {
   text-align: center;
   vertical-align: middle;
@@ -180,6 +178,15 @@ pointer-events: none;
   display: flex;
   align-items: center;
   flex: 0 0 17%;
+}
+.menu__arrow{
+  display: none;
+}
+.menu__inner .menu__item.menu__dropdown .menu__link svg{
+  display: none;
+}
+.navbar__center .menu__inner{
+  margin: 0;
 }
 @media (max-width: 766px) {
   .navbar .navbar__left {
@@ -429,7 +436,7 @@ pointer-events: none;
 }
 @media (min-width: 975px) {
   .submenu.megamenu__text, .submenu.megamenu__image {
-    max-width: 992px;
+    max-width: 100%;
   }
 }
 .submenu.megamenu__image .submenu__inner a {
@@ -464,6 +471,10 @@ pointer-events: none;
 .submenu .submenu__inner {
   width: 25%;
   padding: 0 15px;
+  margin-bottom: 20px;
+}
+.submenu .submenu__inner .submenu__list {
+  padding-left: 10px !important;
 }
 @media (max-width: 766px) {
   .submenu .submenu__inner {
@@ -472,8 +483,8 @@ pointer-events: none;
   }
 }
 .submenu .submenu__inner .submenu__title {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   color: var(--color);
   text-transform: uppercase;
   transition: all 0.3s ease;
@@ -489,15 +500,20 @@ pointer-events: none;
   margin: 0 auto;
 }
 .submenu .submenu__list li a {
-  display: inline-block;
   padding: 10px 0;
   line-height: 1.4;
   text-transform: capitalize;
   color: #000;
   transition: all 0.25s ease-in-out;
+  font-size: 13px;
+  font-weight: 400;
+  display: flex;
+  column-gap: 4px;
+  align-items: center;
 }
 .submenu .submenu__list li a:hover {
-  color: var(--color);
+  color: var(--secondary);
+  text-decoration: underline !important;
 }
 @media (max-width: 766px) {
   .submenu .submenu__list li a {
@@ -569,6 +585,9 @@ pointer-events: none;
   .burger {
     opacity: 1;
     visibility: visible;
+  }
+  .menu__inner .menu__item.menu__dropdown .menu__link svg{
+    display: block;
   }
 }
 .burger .burger-line {

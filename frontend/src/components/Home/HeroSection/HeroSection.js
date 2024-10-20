@@ -30,9 +30,9 @@ export default function HeroSection() {
           disableOnInteraction: false,
         }}
         pagination={{
-          clickable: true,
+          enabled: false
         }}
-        navigation={true}
+        navigation={false}
         modules={[Autoplay, Pagination, Navigation]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
