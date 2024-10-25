@@ -11,7 +11,7 @@ import 'swiper/css/navigation';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Image from 'next/image';
-import Constant from '@/Constants/Constants';
+import Constant from '@/config/constant';
 
 export default function HeroSection() {
   const progressCircle = useRef(null);
@@ -38,13 +38,13 @@ export default function HeroSection() {
         className="mySwiper"
       >
         <SwiperSlide className='SwiperBanners'>
-            <Image src={`${Constant.IMAGES_URL}/slider_1.webp`} width={2000} height={2000} alt='SLider'/>
+            <Image src={`${Constant.BASE_IMAGE_URL}/slider_1.webp`} width={2000} height={2000} alt='SLider'/>
         </SwiperSlide>
         <SwiperSlide className='SwiperBanners'>
-            <Image src={`${Constant.IMAGES_URL}/slider_2.webp`} width={2000} height={2000} alt='SLider'/>
+            <Image src={`${Constant.BASE_IMAGE_URL}/slider_2.webp`} width={2000} height={2000} alt='SLider'/>
         </SwiperSlide>
         <SwiperSlide className='SwiperBanners'>
-            <Image src={`${Constant.IMAGES_URL}/slider_1.webp`} width={2000} height={2000} alt='SLider'/>
+            <Image src={`${Constant.BASE_IMAGE_URL}/slider_1.webp`} width={2000} height={2000} alt='SLider'/>
         </SwiperSlide>
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>

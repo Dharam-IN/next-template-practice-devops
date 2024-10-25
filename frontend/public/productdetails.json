@@ -1,0 +1,63 @@
+{
+    "product": {
+        "id": "12345",
+        "name": "Elegant Diamond Ring",
+        "description": "This stunning diamond ring features a 1-carat round brilliant diamond set in a delicate 14k white gold band. Perfect for engagements or special occasions.",
+        "price": {
+            "originalPrice": 1500.00,
+            "discountedPrice": 1200.00
+        },
+        "images": [
+            {
+                "url": "https://example.com/images/product1_main.jpg",
+                "alt": "Elegant Diamond Ring"
+            },
+            {
+                "url": "https://example.com/images/product1_side.jpg",
+                "alt": "Side view of Elegant Diamond Ring"
+            },
+            {
+                "url": "https://example.com/images/product1_zoom.jpg",
+                "alt": "Zoomed view of Elegant Diamond Ring"
+            }
+        ],
+        "features": [
+            "1-carat round brilliant diamond",
+            "14k white gold band",
+            "Available in sizes 5 to 10",
+            "Conflict-free diamonds"
+        ],
+        "category": "Rings",
+        "availability": "In Stock",
+        "ratings": {
+            "average": 4.8,
+            "totalReviews": 150
+        },
+        "reviews": [
+            {
+                "user": "Alice",
+                "rating": 5,
+                "comment": "Absolutely love this ring! It's even more beautiful in person."
+            },
+            {
+                "user": "John",
+                "rating": 4,
+                "comment": "Great quality but took a bit longer to arrive."
+            }
+        ],
+        "relatedProducts": [
+            {
+                "id": "12346",
+                "name": "Gold Band Ring",
+                "image": "https://example.com/images/product2.jpg",
+                "price": 800.00
+            },
+            {
+                "id": "12347",
+                "name": "Platinum Engagement Ring",
+                "image": "https://example.com/images/product3.jpg",
+                "price": 2000.00
+            }
+        ]
+    }
+}

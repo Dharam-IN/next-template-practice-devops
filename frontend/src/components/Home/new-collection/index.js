@@ -1,6 +1,6 @@
 import React from 'react';
-import Constant from '@/Constants/Constants';
 import Image from 'next/image';
+import Constant from '@/config/constant';
 
 export default function NewCollection() {
   return (
@@ -11,7 +11,7 @@ export default function NewCollection() {
           <div className="col-lg-6 col-md-6 d-none d-md-block">
             <div className="NewCollectionSectionImageWrapper">
               <Image
-                src={`${Constant.IMAGES_URL}/NewCollection.png`}
+                src={`${Constant.BASE_IMAGE_URL}/NewCollection.png`}
                 alt="Hero"
                 width={1000}
                 height={1000}

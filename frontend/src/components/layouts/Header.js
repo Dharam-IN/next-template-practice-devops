@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import Link from 'next/link';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Constant from '@/Constants/Constants';
 import Image from 'next/image';
+import Constant from '@/config/constant';
 
 const Header = () => {
   const [categories, setCategories] = useState([]);
@@ -20,39 +20,39 @@ const Header = () => {
             {
               section: 'Natural Gemstone Earrings',
               products: [
-                { name: 'Blue Sapphire Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
-                { name: 'Ruby Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
-                { name: 'Emerald Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
-                { name: 'Opal Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
+                { name: 'Blue Sapphire Earrings', img: `${Constant.BASE_IMAGE_URL}/header_gem.webp` },
+                { name: 'Ruby Earrings', img: `${Constant.BASE_IMAGE_URL}/header_gem.webp` },
+                { name: 'Emerald Earrings', img: `${Constant.BASE_IMAGE_URL}/header_gem.webp` },
+                { name: 'Opal Earrings', img: `${Constant.BASE_IMAGE_URL}/header_gem.webp` },
               ]
             },
             {
               section: 'Natural Diamond Earrings',
               products: [
-                { name: 'Diamond Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
-                { name: 'Colored Diamond Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
+                { name: 'Diamond Earrings', img: `${Constant.BASE_IMAGE_URL}/header_gem.webp` },
+                { name: 'Colored Diamond Earrings', img: `${Constant.BASE_IMAGE_URL}/header_gem.webp` },
               ]
             },
             {
               section: 'Lab-Grown Earrings',
               products: [
-                { name: 'Lab Diamond Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
-                { name: 'Lab Ruby Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
+                { name: 'Lab Diamond Earrings', img: `${Constant.BASE_IMAGE_URL}/header_gem.webp` },
+                { name: 'Lab Ruby Earrings', img: `${Constant.BASE_IMAGE_URL}/header_gem.webp` },
               ]
             },
             {
               section: 'Earrings by Style',
               products: [
-                { name: 'Classic Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
-                { name: 'Stud Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
-                { name: 'Drop Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` }
+                { name: 'Classic Earrings', img: `${Constant.BASE_IMAGE_URL}/header_gem.webp` },
+                { name: 'Stud Earrings', img: `${Constant.BASE_IMAGE_URL}/header_gem.webp` },
+                { name: 'Drop Earrings', img: `${Constant.BASE_IMAGE_URL}/header_gem.webp` }
               ]
             },
             {
               section: 'Featured',
               products: [
-                { name: 'Best Selling Earrings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
-                { name: 'Anniversary Gifts', img: `${Constant.IMAGES_URL}/header_gem.webp` }
+                { name: 'Best Selling Earrings', img: `${Constant.BASE_IMAGE_URL}/header_gem.webp` },
+                { name: 'Anniversary Gifts', img: `${Constant.BASE_IMAGE_URL}/header_gem.webp` }
               ]
             }
           ]
@@ -63,15 +63,15 @@ const Header = () => {
             {
               section: 'Gemstone Rings',
               products: [
-                { name: 'Blue Sapphire Rings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
-                { name: 'Ruby Rings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
+                { name: 'Blue Sapphire Rings', img: `${Constant.BASE_IMAGE_URL}/header_gem.webp` },
+                { name: 'Ruby Rings', img: `${Constant.BASE_IMAGE_URL}/header_gem.webp` },
               ]
             },
             {
               section: 'Diamond Rings',
               products: [
-                { name: 'Solitaire Rings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
-                { name: 'Halo Rings', img: `${Constant.IMAGES_URL}/header_gem.webp` },
+                { name: 'Solitaire Rings', img: `${Constant.BASE_IMAGE_URL}/header_gem.webp` },
+                { name: 'Halo Rings', img: `${Constant.BASE_IMAGE_URL}/header_gem.webp` },
               ]
             }
           ]
@@ -88,7 +88,7 @@ const Header = () => {
     <header className="header" id="header">
       <nav className="navbar container">
         <section className="navbar__left">
-          <Link href="/" className="brand">Jewellery</Link>
+          <Link href="/" className="brand">BR Jewellery</Link>
           <div className="burger" id="burger">
             <span className="burger-line"></span>
             <span className="burger-line"></span>

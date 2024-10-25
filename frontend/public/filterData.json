@@ -1,0 +1,20 @@
+{
+    "categories": [
+      { "name": "Rings", "count": 3687 },
+      { "name": "Earrings", "count": 2573 },
+      { "name": "Necklace", "count": 1492 },
+      { "name": "Bracelet", "count": 902 }
+    ],
+    "metalTypes": [
+      { "name": "White Gold", "count": 2970 },
+      { "name": "Yellow Gold", "count": 2642 },
+      { "name": "Rose Gold", "count": 2425 },
+      { "name": "Platinum", "count": 1867 },
+      { "name": "Silver", "count": 155 }
+    ],
+    "priceRange": {
+      "min": 1000,
+      "max": 50000
+    }
+  }
+  
