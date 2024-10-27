@@ -3,15 +3,29 @@
 
 /* Color Variables */
 :root {
-  --background: #ffffff; /* Use light or dark background based on palette */
+  --background: #ffffff; /* Light background for elegance */
   --font-primary: "Poppins", sans-serif;
-  --primary: #fbb72c; /* Gold for luxury feel */
-  --secondary: #273C75; /* Choose based on palette */
-  --accent: #F5F5F5; /* Optional accent color */
-  --text-color: #2C2C2C; /* For readable text */
-  --light-text: #999999; /* For readable text */
-  --white-text: #ffffff; /* For readable text */
+  
+  /* Primary color for main buttons, highlights, etc. */
+  --primary: #fbb72c; /* Gold for a luxurious feel */
+  
+  /* Darker shades for headers, bold text, and some accents */
+  --secondary: #273C75; /* Deep blue for trust and stability */
+  
+  /* Soft neutral for subtle accents like dividers, backgrounds */
+  --accent: #F5F5F5;
+  
+  /* Text colors */
+  --text-color: #2C2C2C; /* Primary dark text */
+  --light-text: #999999; /* Subtle gray text for secondary info */
+  --white-text: #ffffff;
+  
+  /* Additional shades for better hover effects */
+  --hover-primary: #e0a81a; /* Slightly darker gold */
+  --hover-secondary: #1e2d5c; /* Darker blue for contrast */
+  --border-color: #d1d1d1; /* Light gray for borders */
 }
+
 
 html,
 body {
@@ -153,7 +167,7 @@ pointer-events: none;
   margin-bottom: 1rem;
 }
 
-.header {
+/* .header {
   position: fixed;
   top: 0;
   left: 0;
@@ -163,7 +177,7 @@ pointer-events: none;
   margin: 0 auto;
   background-color: #fff;
   box-shadow: var(--shadow-medium);
-}
+} */
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -572,19 +586,16 @@ pointer-events: none;
 
 .burger {
   position: relative;
-  display: block;
+  display: none;
   cursor: pointer;
   width: 25px;
   height: 15px;
   margin-right: 15px;
-  opacity: 0;
-  visibility: hidden;
   background: transparent;
 }
 @media (max-width: 766px) {
   .burger {
-    opacity: 1;
-    visibility: visible;
+    display: block;
   }
   .menu__inner .menu__item.menu__dropdown .menu__link svg{
     display: block;

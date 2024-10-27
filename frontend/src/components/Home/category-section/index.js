@@ -1,4 +1,4 @@
-import { SectionTitle } from '@/components/SectionTitle/SectionTitle';
+import { SectionTitle } from '../../../components/SectionTitle/SectionTitle';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';

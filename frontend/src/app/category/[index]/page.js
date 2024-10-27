@@ -10,7 +10,6 @@ const CategoryPage = () => {
         <div className="row">
           <div className="col-md-2 col-12">
             <FilterSidebar />
-            {/* <FiltersComponent/> */}
           </div>
           <div className="col-md-10 col-12">
             <FiltersProducts />

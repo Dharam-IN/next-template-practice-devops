@@ -1,5 +1,5 @@
 import React from "react";
-import Constant from "@/config/constant";
+import Constant from "../config/constant";
 
 const Capetalizationword = (data) => {
 

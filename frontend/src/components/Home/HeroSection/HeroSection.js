@@ -11,7 +11,7 @@ import 'swiper/css/navigation';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Image from 'next/image';
-import Constant from '@/config/constant';
+import Constant from '../../../config/constant';
 
 export default function HeroSection() {
   const progressCircle = useRef(null);

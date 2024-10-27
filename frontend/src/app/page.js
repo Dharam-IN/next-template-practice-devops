@@ -1,10 +1,10 @@
-import CategorySection from "@/components/Home/category-section";
-import HeroSection from "@/components/Home/HeroSection/HeroSection";
-import MostLoved from "@/components/Home/most-loved";
-import NewCollection from "@/components/Home/new-collection";
-import HomePopularStyle from "@/components/Home/popular-style";
-import ProductSection from "@/components/Home/product-list";
-import TopOffersSection from "@/components/topoffers";
+import CategorySection from "../components/Home/category-section";
+import HeroSection from "../components/Home/HeroSection/HeroSection";
+import MostLoved from "../components/Home/most-loved";
+import NewCollection from "../components/Home/new-collection";
+import HomePopularStyle from "../components/Home/popular-style";
+import ProductSection from "../components/Home/product-list";
+import TopOffersSection from "../components/topoffers";
 
 export const metadata = {
   title: "Home - Jewellery eCommerce", 

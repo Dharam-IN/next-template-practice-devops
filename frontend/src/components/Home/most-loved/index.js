@@ -5,10 +5,10 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
-import { SectionTitle } from "@/components/SectionTitle/SectionTitle";
+import { SectionTitle } from "../../../components/SectionTitle/SectionTitle";
 import Image from "next/image";
 import Link from "next/link";
-import ProductCol from "@/components/productcol";
+import ProductCol from "../../../components/productcol";
 
 export default function MostLoved() {
   const [products, setProducts] = useState([]);

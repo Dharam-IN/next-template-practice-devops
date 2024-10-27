@@ -1,7 +1,7 @@
 "use client"
-import ProductBadge from '@/components/ProductBadge/ProductBadge';
-import ProductCol from '@/components/productcol';
-import { SectionTitle } from '@/components/SectionTitle/SectionTitle';
+import ProductBadge from '../../../components/ProductBadge/ProductBadge';
+import ProductCol from '../../../components/productcol';
+import { SectionTitle } from '../../../components/SectionTitle/SectionTitle';
 import React, { useEffect, useState } from 'react';
 
 export default function ProductSection() {
