@@ -129,7 +129,7 @@ const Register = () => {
                             BR Jewellers
                         </figure>
                         <h2>Sign in</h2>
-                        <p className="text-center">Don't have an account?
+                        <p className="text-center">Don&apos;t have an account?
                             <Link href="/register"> Sign up here</Link>
                         </p>
                         <form className="login-form" onSubmit={handleSubmit(onSubmit)}>

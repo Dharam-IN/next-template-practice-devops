@@ -43,7 +43,7 @@ export default function CategorySection() {
                 <div className="container">
                     <div className="row">
                         <SectionTitle title={"Shop By Category"}>
-                            Browse through your favorite categories. We've got them all!
+                            Browse through your favorite categories. We&apos;ve got them all!
                         </SectionTitle>
                     </div>
                     <div className="row">
@@ -56,7 +56,7 @@ export default function CategorySection() {
                                             width={200} 
                                             height={200} 
                                             alt={image.alt} 
-                                            style={{ cursor: 'pointer' }} // Optional: Makes it clear it's clickable
+                                            style={{ cursor: 'pointer' }}
                                         />
                                         <div className="CategoryHoverText">
                                             <h3>

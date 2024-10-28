@@ -24,7 +24,7 @@ export default function NewCollection() {
             <div className="NewCollectionSectionContent">
                 <h1 className="display-4">Ring</h1>
                 <p className="lead">
-                    Discover our exquisite collection of rings, crafted with the finest materials and designed to elevate any occasion. From elegant diamond solitaires to intricate vintage styles, each piece tells a story of beauty and craftsmanship. Find the perfect ring that expresses your unique style and celebrates life's special moments.
+                    Discover our exquisite collection of rings, crafted with the finest materials and designed to elevate any occasion. From elegant diamond solitaires to intricate vintage styles, each piece tells a story of beauty and craftsmanship. Find the perfect ring that expresses your unique style and celebrates life&apos;s special moments.
                 </p>
                 <a href="#" className="btn btn-fill">
                     <span>

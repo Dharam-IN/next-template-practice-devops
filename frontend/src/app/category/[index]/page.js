@@ -1,6 +1,5 @@
-import FiltersProducts from '@/components/filterproducts';
-import FilterSidebar from '@/components/filtersidebar';
-import FiltersComponent from '@/components/newfiltersidebar';
+import FiltersProducts from '../../../components/filterproducts';
+import FilterSidebar from '../../../components/filtersidebar';
 import React from 'react';
 
 const CategoryPage = () => {
