@@ -75,6 +75,10 @@ a, .btn {
   text-decoration: none !important;
 }
 
+ul,li{
+  list-style: none;
+}
+
 /* Small Text */
 small {
   font-family: var(--font-primary);

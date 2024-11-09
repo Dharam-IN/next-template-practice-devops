@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductDetails from '../../../components/productDetails'
+import Constants from '../../../config/constant'
 
 // export async function getServerSideProps(context) {
 //   const { id } = context.params;
@@ -51,6 +52,88 @@ const ProductDetailsPage = () => {
       'https://via.placeholder.com/500?text=Image+3',
       'https://via.placeholder.com/500?text=Image+4',
     ],
+    totalCaratWeight: {
+      title: "Total Carat Weight : 1 Ct",
+      data: [
+        {
+          value: "0.93 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        },
+        {
+          value: "1.93 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        },
+        {
+          value: "2.93 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        },
+        {
+          value: "3.01 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        },
+        {
+          value: "4.56 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        },
+        {
+          value: "1.93 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        },
+        {
+          value: "2.93 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        },
+        {
+          value: "3.01 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        },
+        {
+          value: "4.56 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        }
+      ]
+    },
+    metalType: {
+      title: "Metal Type : Platinum",
+      data: [
+        {
+          value: "0.93 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        },
+        {
+          value: "1.93 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        },
+        {
+          value: "2.93 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        },
+        {
+          value: "3.01 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        },
+        {
+          value: "4.56 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        },
+        {
+          value: "1.93 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        },
+        {
+          value: "2.93 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        },
+        {
+          value: "3.01 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        },
+        {
+          value: "4.56 Ct",
+          image: `${Constants.BASE_IMAGE_URL}/header_gem.webp`
+        }
+      ]
+    }
   };
 
   return (
