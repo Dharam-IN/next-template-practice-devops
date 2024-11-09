@@ -7,7 +7,7 @@ const index = ({ title }) => {
     const segments = title?.split("/").filter(Boolean);
     return (
         <>
-            <div className="container mt-5">
+            <div className="container-fluid my-3 py-2">
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item Default-Crumb">

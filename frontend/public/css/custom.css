@@ -742,6 +742,49 @@
   border-radius: 5px;
 }
 
+.quantity-block input[type="number"]::-webkit-inner-spin-button,
+.quantity-block input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.quantity-block input[type="number"] {
+  -moz-appearance: textfield;
+  width: 100%;
+  text-align: center;
+}
+.quantity-block {
+  margin: 30px auto;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quantity-arrow-minus,
+.quantity-arrow-plus {
+  font-size: 28px;
+  padding: 7px 10px 10px 10px;
+  min-width: 50px;
+  box-sizing: border-box;
+  outline: none;
+  background-color: #000;
+  border: none;
+  height: 50px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quantity-num {
+  font-size: 20px;
+  padding: 5px 10px;
+  border-radius: 0;
+  outline: none;
+  border: 1px solid #ddd;
+  height: 50px;
+}
+
 
 
 

@@ -1,23 +1,64 @@
-import React from 'react';
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
 
-const FiltersProducts = () => {
-  const products = [
-    { id: 1, name: 'Gold Ring', price: '₹20,000', image: '/images/ring.jpg' },
-    { id: 2, name: 'Diamond Necklace', price: '₹50,000', image: '/images/necklace.jpg' },
-    { id: 3, name: 'Silver Earrings', price: '₹10,000', image: '/images/earrings.jpg' }
-  ];
+const JewelryProductCard = () => {
+    return (
+        <>
+            <li>
+                <div className="jewelryProductCard">
+                    <span className="product-ribbon">New Arrival</span>
 
-  return (
-    <div className="products-grid">
-      {products.map(product => (
-        <div className="product-card" key={product.id}>
-          <img src={product.image} alt={product.name} />
-          <h4>{product.name}</h4>
-          <p>{product.price}</p>
-        </div>
-      ))}
-    </div>
-  );
-};
+                    <div className="product-image">
+                        <Link href="/product-details/necklace-123">
+                            <Image
+                                width={300}
+                                height={300}
+                                src="/images/jewelry/necklace.jpg"
+                                alt="Gold Necklace"
+                                className="product-image"
+                            />
+                        </Link>
+                    </div>
 
-export default FiltersProducts;
+                    <div className="product-info">
+                        <div className="product-name">
+                            <span>Elegant Gold Necklace</span>
+                            <span className="ratingNumber">
+                                <Image
+                                    width={16}
+                                    height={16}
+                                    src="/images/star-icon.svg"
+                                    alt="Rating"
+                                />
+                                4.8
+                            </span>
+                        </div>
+                        <div className="product-details">
+                            <span>Material: 18k Gold</span>
+                            <span>Style: Classic</span>
+                            <span>Color: Gold</span>
+                        </div>
+                        <div className="product-location">
+                            <i className="fas fa-map-marker-alt"></i> Ships from New York, USA
+                        </div>
+                    </div>
+
+                    <div className="product-pricing">
+                        <div className="price-info">
+                            <span className="product-price">
+                                Starting From <br />
+                                <strong>$249.99</strong>
+                            </span>
+                        </div>
+                        <div className="delivery-time">
+                            <span>Estimated Delivery: 3-5 Days</span>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </>
+    )
+}
+
+export default JewelryProductCard
