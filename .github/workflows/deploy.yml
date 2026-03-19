@@ -28,7 +28,7 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_KEY }}
           script: |
-            docker stop next-container:latest || true
-            docker rm next-container:latest || true
+            docker stop next-container || true
+            docker rm next-container || true
             docker pull ${{ secrets.DOCKER_USERNAME }}/next-image:latest
-            docker run -d --name next-container:latest -p 80:3000 ${{ secrets.DOCKER_USERNAME }}/next-image:latest
+            docker run -d --name next-container -p 80:3000 ${{ secrets.DOCKER_USERNAME }}/next-image:latest
